@@ -47,8 +47,21 @@ const createRouter = function (collection) {
     })
 
     router.put('/:id', (req, res) => {
-      const id = req.params.id
+      const id = req.params.id;
+      const data = req.body;
       collection
+        .findOneAndUpdate({ _id: ObjectID(id)},
+        { $set: data  },
+        {returnOriginal: false}
+        )
+        .then((result) => {
+          res.json(result)
+        })
+        .catch((err) => {
+          console.error(err);
+          res.status(500);
+          res.json({ status: 500, error: err });
+        });
     })
 
 
@@ -61,8 +74,8 @@ const createRouter = function (collection) {
         .catch((err) => {
           console.error(err);
           res.status(500);
-          res.json({ status: 500, error: err })
-        })
+          res.json({ status: 500, error: err });
+        });
     })
   
     return router;
