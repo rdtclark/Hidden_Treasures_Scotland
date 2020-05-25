@@ -1,14 +1,14 @@
-<template>
-  
-</template>
+<template></template>
 
 <script>
-export default {
-    name: 'place-container'
+import PlceDescription from "./PlaceDescription";
+import PlaceImage from "./PlaceImage";
 
-}
+
+export default {
+  name: "place-container"
+};
 </script>
 
 <style>
-
 </style>
