@@ -12,9 +12,9 @@ app.use(parser.json());
 MongoClient.connect('mongodb://localhost:27017')
   .then((client) => {
     const db = client.db('hidden_treasures')
-    const placeCollection = db.collection('places')
-    const placeRouter = createRouter(placeCollection)
-    app.use('/api/places', placeRouter)
+    const treasureCollection = db.collection('treasures')
+    const treasureRouter = createRouter(treasureCollection)
+    app.use('/api/treasures', treasureRouter)
   })
   .catch(console.error)
 
