@@ -1,3 +1,5 @@
+HIDDEN TREASURES SCOTLAND
+
 The app to discover mini adventures near you.
 You can search our growing API to find unusual places to visit in and around Scotland. Hidden beaches, caves, walks and generally fun places for a mini adventure in your back yard.
 ## MVP
