@@ -1,7 +1,7 @@
-use treasures;
+use hidden_treasures;
 db.dropDatabase();
 
-db.hidden_treasures.insertMany(
+db.treasures.insertMany(
 [
     {
         name: "St Bernards Well",
