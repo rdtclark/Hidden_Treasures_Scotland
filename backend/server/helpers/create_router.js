@@ -32,6 +32,19 @@ const createRouter = function (collection) {
         });
     });
 
+    router.post("/", (req, res) => {
+      const data = req.body;
+      collection
+        .insertOne(data)
+        .then(doc => {
+          res.json(doc.ops[0])
+        })
+        .catch((err) => {
+          console.error(err);
+          res.status(500);
+          res.json({status: 500, error: err})
+        })
+    })
   
     return router;
     
