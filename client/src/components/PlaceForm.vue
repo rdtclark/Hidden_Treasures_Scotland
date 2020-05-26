@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="add-place-container">
     <form v-on:submit.prevent="handleSubmit()" action class="formwrapper">
 
       <h2>Add a new place</h2>

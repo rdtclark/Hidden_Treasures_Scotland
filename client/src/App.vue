@@ -1,12 +1,13 @@
 <template>
-  <div>
-    <h1>TITLE</h1>
+  <div class="wrapper">
+    <header class="header"><h1>TITLE</h1></header>
     <button v-if="!showForm" @click="showForm=true">Add a new Place</button>
     <button v-if="showForm" @click="showForm=false">HIDE</button>
 
     <place-form v-if="showForm" :places="places" :types="types"></place-form>
     <place-map :places="places"></place-map>
     <place-container v-if="selectedPlace" :place="selectedPlace"></place-container>
+     <footer class="footer">My footer</footer>
   </div>
 </template>
 
