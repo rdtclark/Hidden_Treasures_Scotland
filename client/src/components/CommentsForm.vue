@@ -20,14 +20,23 @@ export default {
       comment: ""
     };
   },
-  props: ["placeID"],
+  computed: {
+    commentsList: function(){
+      let array = [];
+      result = array.map(this.comments.push(this.comment))
+      return result
+    }
+  },
+
+  props: ["placeID", 'comments'],
   methods: {
     handleSubmit() {
+      console.log(this.commentsList);
+      
       const payload = {
         _id: this.placeID,
-        comments: this.comment
+        comments: [this.commentsList]
       };
-      //   eventBus.$emit("add-comment", payload);
       ApiServices.updateTreasure(payload).then(res =>
         eventBus.$emit("add-comment", res)
       );

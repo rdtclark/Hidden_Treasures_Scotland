@@ -26,7 +26,7 @@ export default {
   methods: {},
   mounted() {
     eventBus.$on("add-comment", comment => {
-      this.place.comments.push(comment.comments);
+        // this.place.comments.push(comment.value.comments);
     });
   }
 };
