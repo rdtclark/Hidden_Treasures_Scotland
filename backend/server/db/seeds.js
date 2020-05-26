@@ -21,7 +21,7 @@ db.treasures.insertMany(
       },
       {
         name: "Cuaig Beach",
-        lat: "57.559887,",
+        lat: "57.559887",
         long: "-5.838022",
         description: "",
         comments: [],
@@ -29,7 +29,7 @@ db.treasures.insertMany(
       },
       {
         name: "Boreray",
-        lat: "57.869932,",
+        lat: "57.869932",
         long: "-8.487713",
         description: "",
         comments: [],
@@ -37,7 +37,7 @@ db.treasures.insertMany(
       },
       {
         name: "Sanna Bay",
-        lat: "56.743651, ",
+        lat: "56.743651",
         long: "-6.180812",
         description: "",
         comments: [],
@@ -45,7 +45,7 @@ db.treasures.insertMany(
       },
       {
         name: "Clamshell Cave",
-        lat: "56.432712, ",
+        lat: "56.432712",
         long: "-6.339554",
         description: "",
         comments: [],
@@ -53,7 +53,7 @@ db.treasures.insertMany(
       },
       {
         name: "Falls of Bruar",
-        lat: "56.773901, ",
+        lat: "56.773901",
         long: "-3.934511",
         description: "",
         comments: [],
@@ -61,7 +61,7 @@ db.treasures.insertMany(
       },
       {
         name: "Little Sparta",
-        lat: "55.723283, ",
+        lat: "55.723283",
         long: "-3.509273",
         description: "",
         comments: [],
@@ -69,7 +69,7 @@ db.treasures.insertMany(
       },
       {
         name: "Mount Stuart",
-        lat: "55.791762, ",
+        lat: "55.791762",
         long: "-5.018597",
         description: "",
         comments: [],
@@ -77,7 +77,7 @@ db.treasures.insertMany(
       },
       {
         name: "MV Captayannis",
-        lat: "55.975980, ",
+        lat: "55.975980",
         long: "-4.742065",
         description: "",
         comments: [],
@@ -85,7 +85,7 @@ db.treasures.insertMany(
       },
       {
         name: "Iona Abbey",
-        lat: "56.334810, ",
+        lat: "56.334810",
         long: "-6.391463",
         description: "",
         comments: [],
@@ -93,7 +93,7 @@ db.treasures.insertMany(
       },
       {
         name: "Falls of Glomach",
-        lat: "57.274112, ",
+        lat: "57.274112",
         long: "-5.291736",
         description: "",
         comments: [],
@@ -101,7 +101,7 @@ db.treasures.insertMany(
       },
       {
         name: "Wellington Bomber Crash Site",
-        lat: "57.222821,",
+        lat: "57.222821",
         long: "-5.191767",
         description: "",
         comments: [],
@@ -109,7 +109,7 @@ db.treasures.insertMany(
       },
       {
         name: "Drumbeg Viewpoint",
-        lat: "58.244601,",
+        lat: "58.244601",
         long: "-5.20497",
         description: "",
         comments: [],
@@ -117,7 +117,7 @@ db.treasures.insertMany(
       },
       {
         name: "The Bad Step",
-        lat: "57.194765, ",
+        lat: "57.194765",
         long: "-6.149147",
         description: "",
         comments: [],
@@ -125,7 +125,7 @@ db.treasures.insertMany(
       },
       {
         name: "The Black Cullins",
-        lat: "57.212963, ",
+        lat: "57.212963",
         long: "-6.209571",
         description: "",
         comments: [],
@@ -229,7 +229,7 @@ db.treasures.insertMany(
       },
       {
         name: "Amisfield Walled Garden",
-        lat: "55.958741,-2.7503102",
+        lat: "55.958741",
         long: "-2.7503102",
         description: "",
         comments: [],
@@ -405,7 +405,7 @@ db.treasures.insertMany(
       },
       {
         name: "Great Polish Map of Scotland",
-        lat: "55.7120207,",
+        lat: "55.7120207",
         long: "-3.2187668",
         description: "This huge concrete map of Scotland was built as a thank you gift from a Polish soldier.",
         comments: [],

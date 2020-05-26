@@ -2,6 +2,7 @@
   <div>
     <h1>TITLE</h1>
     <place-map :places="this.places"></place-map>
+    <place-container v-if="selectedPlace" :place="selectedPlace"></place-container>
   </div>
 </template>
 
@@ -12,16 +13,23 @@ import PlaceContainer from "./components/PlaceContainer";
 import PlaceForm from "./components/PlaceForm";
 
 import ApiServices from "./services/apiServices";
+import { eventBus } from './main';
 
 export default {
   name: "app",
   data() {
     return {
-      places: []
+      places: [],
+      selectedPlace: null
     };
   },
   mounted() {
     this.getData();
+
+    eventBus.$on('place-selected', (place) => {
+      this.selectedPlace = place
+    })
+
   },
   methods: {
     getData() {
