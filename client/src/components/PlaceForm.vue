@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <form v-on:submit.prevent="handleSubmit()" action class="formwrapper">
-      <button>Add a new Place</button>
 
       <h2>Add a new place</h2>
 

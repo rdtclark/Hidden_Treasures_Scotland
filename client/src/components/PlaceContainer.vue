@@ -11,6 +11,8 @@
 import PlaceDescription from "./PlaceDescription";
 import PlaceImage from "./PlaceImage";
 import CommentsContainer from "./CommentsContainer";
+import { eventBus } from "../main.js";
+
 
 export default {
   name: "place-container",
@@ -20,6 +22,14 @@ export default {
     "place-image": PlaceImage,
     "place-description": PlaceDescription,
     "comments-container": CommentsContainer
+  },
+  methods: {
+    
+  },
+  mounted() {
+    eventBus.$on("add-comment", comment => {
+      this.place.comments.push(comment);
+    });
   }
 };
 </script>

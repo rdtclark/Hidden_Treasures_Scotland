@@ -1,7 +1,10 @@
 <template>
   <div>
     <h1>TITLE</h1>
-    <place-form :places="places" :types="types"></place-form>
+    <button v-if="!showForm" @click="showForm=true">Add a new Place</button>
+    <button v-if="showForm" @click="showForm=false">HIDE</button>
+
+    <place-form v-if="showForm" :places="places" :types="types"></place-form>
     <place-map :places="places"></place-map>
     <place-container v-if="selectedPlace" :place="selectedPlace"></place-container>
   </div>
@@ -21,7 +24,8 @@ export default {
   data() {
     return {
       places: [],
-      selectedPlace: null
+      selectedPlace: null,
+      showForm: false
     };
   },
   mounted() {
