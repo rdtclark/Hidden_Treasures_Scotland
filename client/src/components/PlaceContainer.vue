@@ -1,20 +1,26 @@
 <template>
-<div>{{this.place.name}}</div>
+  <div>
+    <place-image :place="this.place"></place-image>
+    <place-description :place="this.place"></place-description>
 
+    <comment-container :place="this.place"></comment-container>
+  </div>
 </template>
 
 <script>
-import PlceDescription from "./PlaceDescription";
+import PlaceDescription from "./PlaceDescription";
 import PlaceImage from "./PlaceImage";
-
 
 export default {
   name: "place-container",
-  props: ['place']
+  props: ["place"],
+
+  components: {
+    "place-image": PlaceImage,
+    "place-description": PlaceDescription
+  }
 };
 </script>
 
 <style>
-
-
 </style>

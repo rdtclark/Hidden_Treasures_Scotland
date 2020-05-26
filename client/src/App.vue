@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>TITLE</h1>
+    <place-form :places="places" :types="types"></place-form>
     <place-map :places="this.places"></place-map>
     <place-container v-if="selectedPlace" :place="selectedPlace"></place-container>
   </div>
@@ -13,7 +14,7 @@ import PlaceContainer from "./components/PlaceContainer";
 import PlaceForm from "./components/PlaceForm";
 
 import ApiServices from "./services/apiServices";
-import { eventBus } from './main';
+import { eventBus } from "./main";
 
 export default {
   name: "app",
@@ -26,10 +27,9 @@ export default {
   mounted() {
     this.getData();
 
-    eventBus.$on('place-selected', (place) => {
-      this.selectedPlace = place
-    })
-
+    eventBus.$on("place-selected", place => {
+      this.selectedPlace = place;
+    });
   },
   methods: {
     getData() {
@@ -37,6 +37,13 @@ export default {
         console.log(res);
         this.places = res;
       });
+    }
+  },
+  computed: {
+    types: function() {
+      const array = this.places.map(place => place.type);
+      let unique = array.filter((item, i, ar) => ar.indexOf(item) === i);
+      return unique;
     }
   },
   components: {
