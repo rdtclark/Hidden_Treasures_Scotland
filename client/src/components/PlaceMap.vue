@@ -7,7 +7,11 @@
         :key="index"
         :latLng="latLng(place.lat, place.long)"
         @click="handleClick(place)"
+        @add="openPopup">
+        <l-popup
+          :content="place.name" :options="{autoClose: true, closeOnClick: false}"
       >
+      </l-popup>
         <!-- <l-icon icon-anchor="[16, 37]" class-name="marker"></l-icon> -->
       </l-marker>
     </l-map>
@@ -16,7 +20,7 @@
 
 <script>
 import L from "leaflet";
-import { LMap, LTileLayer, LMarker, LIcon } from "vue2-leaflet";
+import { LMap, LTileLayer, LMarker, LIcon, LPopup } from "vue2-leaflet";
 import { eventBus } from '../main.js'
 
 export default {
@@ -37,7 +41,8 @@ export default {
     LMap,
     LTileLayer,
     LMarker,
-    LIcon
+    LIcon,
+    LPopup
   },
 
 
@@ -52,7 +57,12 @@ export default {
 
     handleClick(place){
       eventBus.$emit('place-selected', place)
-    }
+    },
+    openPopup: function (event) {
+      Vue.nextTick(() => {
+          event.target.openPopup();
+      })
+		},
 
 
 
@@ -69,6 +79,17 @@ export default {
   margin: auto;
 }
 
+/* .leaflet-popup-content-wrapper {
+
+}
+
+.leaflet-popup-content-wrapper .leaflet-popup-content {
+
+}
+
+.leaflet-popup-tip-container {
+
+} */
 
 
 </style>

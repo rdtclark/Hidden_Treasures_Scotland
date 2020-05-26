@@ -10,7 +10,6 @@ const createRouter = function (collection) {
         .find()
         .toArray()
         .then((docs) => {
-          console.log(res.json(docs));
           res.json(docs)
         })
         .catch((err) => {
