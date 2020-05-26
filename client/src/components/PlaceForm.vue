@@ -1,8 +1,7 @@
 <template>
-  <div class="form-wrapper">
-    <form v-on:submit.prevent="handleSubmit()" action class="place-form">
-      <h2>Add a new place</h2>
-
+  <div>
+    <form v-on:submit.prevent="handleSubmit()" class="form-wrapper">
+      <h3>Enter Details</h3>
       <div class="single-input">
         <label for="name">Place Name:</label>
         <input type="text" id="name" name="name" v-model="name" required />
@@ -23,7 +22,7 @@
         <textarea id="description" rows="5" name="description" v-model="description" required></textarea>
       </div>
 
-      <input type="submit" name="submit" value="Save" />
+      <input type="submit" name="submit" value="Save" class="submit-button"/>
     </form>
   </div>
 </template>
@@ -44,6 +43,13 @@ export default {
   },
   name: "place-form",
   props: ["places", "types"],
+  mounted() {
+    eventBus.$on('location-selected', latlng => {
+      this.lat = latlng.lat
+      this.long = latlng.lng
+    })
+
+  },
 
   methods: {
     handleSubmit() {
@@ -68,29 +74,52 @@ export default {
 </script>
 
 <style scoped>
-.form-wrapper {
-  display: flex;
-  height: 40vh;
-  grid-column: 1 / -1;
+
+input, select, textarea{
+  background-color: #141C3D   ;
+  color: #DAFEFF ;
+  border: none;
 }
 
-.place-form {
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
+.submit-button{
+  height: 5vh;
+  width: 5vh;
+  border-radius: 50%;
 }
-.single-input {
+
+.form-wrapper {
   display: grid;
   grid-template-columns: auto;
-  width: 50%;
+  height: 60vh;
+  width: 20vw;
+  justify-items: center;
+  align-items: center;
+  background-color: #254261 ;
+  color: #DAFEFF ;
+}
+
+
+.single-input {
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 3vh;
+  align-content: center;
+  justify-items: space-evenly;
+  width: 90%;
 }
 
 .field-input {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 20vh;
+  width: 90%;
+  height: 100%;
   align-self: center;
 }
+
+#description{
+  width: 100%;
+  height: 90%; 
+}
+
+
 </style>

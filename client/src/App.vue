@@ -1,13 +1,34 @@
 <template>
-  <div class="wrapper">
-    <header class="header">
-      <h1>TITLE</h1>
-      <button class="add-place-btn" v-if="!showForm" @click="showForm=true">Add a new Place</button>
-      <button class="add-place-btn" v-if="showForm" @click="showForm=false">HIDE</button>
-    </header>
+  <div class="page">
+    <div class="title">
 
-    <place-form v-if="showForm" :places="places" :types="types"></place-form>
-    <place-map :places="places"></place-map>
+      <div>
+        <h1>LOGO</h1>
+      </div>
+
+      <div>
+        <p>
+          Welcome to Scotlands Hidden Treasures 
+        <br>
+          Are you ready to explore?
+        </p>
+      </div>
+
+      <div>
+        <button class="add-place-btn" v-if="!showForm" @click="showForm=true">Add a new Place</button>
+      </div>
+    </div>
+
+
+    <div class="place-map-container">
+
+      <transition name="fade" mode="out-in">
+        <place-form v-if="showForm" :places="places" :types="types"></place-form>
+      </transition>
+
+      <div v-if="!showForm"></div>
+      <place-map :places="places"></place-map>
+    </div>
     <place-container v-if="selectedPlace" :place="selectedPlace"></place-container>
     <footer class="footer">FOOTER</footer>
   </div>
@@ -28,7 +49,7 @@ export default {
     return {
       places: [],
       selectedPlace: null,
-      showForm: true
+      showForm: false
     };
   },
   mounted() {
@@ -41,6 +62,7 @@ export default {
     eventBus.$on("add-place", place => {
       this.places.push(place);
       this.getData();
+      this.showForm = false
     });
   },
   methods: {
@@ -66,46 +88,44 @@ export default {
 </script>
 
 <style>
-.wrapper {
-  max-width: 940px;
-  margin: 0 20px;
-  /* display: grid;*/
-  grid-gap: 10px;
+
+body{
+  background-color: #F2FFFD ;
 }
 
-.wrapper {
-  display: flex;
-  flex-wrap: wrap;
+.page{
+  width: 90%;
+  margin: auto;
 }
 
-.wrapper {
+.title{
   display: grid;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: minmax(150px, auto);
-}
-
-.header,
-.footer {
-  height: 10vh;
-  margin-left: 5px;
-  margin-right: 5px;
-  flex: 0 1 100%;
-  grid-column: 1 / -1;
-}
-
-.header {
-  display: flex;
-  justify-content: space-around;
+  grid-template-columns: 25% 50% 25%;
+  justify-items: center;
   align-items: center;
+  text-align: center;
+  height: 10vh;
+  margin-bottom: 3em;
+  border-radius: 0.5em;
 }
 
-.wrapper > * {
-  background-color: #444;
-  color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  font-size: 150%;
-  margin-bottom: 10px;
+.place-map-container{
+  display: flex;
 }
+
+.add-place-btn{
+  height: 5vh;
+}
+
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+
+
 </style>

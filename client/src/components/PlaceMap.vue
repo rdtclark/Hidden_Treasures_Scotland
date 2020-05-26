@@ -1,7 +1,7 @@
 <template>
   <div class="row map">
-    <l-map @update:zoom="zoomUpdate" :zoom="zoom" :center="center">
-      <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
+    <l-map @update:zoom="zoomUpdate" :zoom="zoom" :center="center" v-on:click="mapClick">
+      <l-tile-layer :url="url" :attribution="attribution" ></l-tile-layer> 
       <l-marker
         v-for="(place, index) in this.places"
         :key="index"
@@ -15,7 +15,6 @@
     </l-map>
   </div>
 </template>
-
 <script>
 import L from "leaflet";
 import { LMap, LTileLayer, LMarker, LIcon, LPopup } from "vue2-leaflet";
@@ -24,13 +23,15 @@ import { eventBus } from "../main.js";
 export default {
   data() {
     return {
+      selectedLatLong: 0,
       zoom: 6,
       center: L.latLng(57.036701, -5.038022),
       url:
         "https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=3576413ab5c044b1be3431efff7b1149",
       attribution:
-        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       // iconSize: [40, 40]
+      newLat: null
     };
   },
   props: ["places"],
@@ -40,6 +41,10 @@ export default {
     LMarker,
     LIcon,
     LPopup
+  },
+
+  mounted() {
+
   },
 
   methods: {
@@ -54,9 +59,15 @@ export default {
     handleClick(place) {
       eventBus.$emit("place-selected", place);
     },
-    openPopup: function(event) {
+
+    mapClick: function(e) {
+      eventBus.$emit('location-selected', e.latlng)
+    },
+
+
+    openPopup: function(e) {
       Vue.nextTick(() => {
-        event.target.openPopup();
+        e.target.openPopup();
       });
     }
   } //end of methods
@@ -66,10 +77,9 @@ export default {
 <style>
 .map {
   height: 60vh;
+  width: 100%;
   margin-left: 5px;
   margin-right: 5px;
-  flex: 0 1 100%;
-  grid-column: 1 / -1;
 }
 
 /* .leaflet-popup-content-wrapper {
