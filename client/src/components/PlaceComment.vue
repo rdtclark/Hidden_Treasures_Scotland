@@ -1,5 +1,8 @@
 <template>
-  <div>{{this.comment}}</div>
+  <div>
+    {{this.comment}}
+    <hr />
+  </div>
 </template>
 
 <script>

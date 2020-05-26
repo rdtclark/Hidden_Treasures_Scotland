@@ -1,12 +1,10 @@
 <template>
   <div class="comments-box">
-    <form v-on:submit.prevent="handleSubmit()" action class="formwrapper">
+    <form v-on:submit.prevent="handleSubmit()" class="formwrapper">
       <h2>Add a new comment</h2>
 
       <label for="comment">Comment:</label>
-      <!-- <input type="text" name="comment" v-model="comment" /> -->
-
-      <textarea rows="5" id="comment" name="comment" v-model="comment" required></textarea>
+      <textarea rows="5" name="comment" v-model="comment" required></textarea>
 
       <input type="submit" name="submit" value="Add Comment" />
     </form>
@@ -22,15 +20,18 @@ export default {
       comment: ""
     };
   },
+  props: ["placeID"],
   methods: {
     handleSubmit() {
       const payload = {
-        comment: this.comment
+        _id: this.placeID,
+        comments: this.comment
       };
-      console.log(payload._id),
-        ApiServices.updateTreasure(payload).then(res =>
-          eventBus.$emit("add-comment", res)
-        );
+      //   eventBus.$emit("add-comment", payload);
+      ApiServices.updateTreasure(payload).then(res =>
+        eventBus.$emit("add-comment", res)
+      );
+
       this.comment = "";
     }
   }

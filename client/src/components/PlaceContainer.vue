@@ -12,7 +12,7 @@ import PlaceDescription from "./PlaceDescription";
 import PlaceImage from "./PlaceImage";
 import CommentsContainer from "./CommentsContainer";
 import { eventBus } from "../main.js";
-
+import ApiServices from "../services/apiServices.js";
 
 export default {
   name: "place-container",
@@ -23,12 +23,10 @@ export default {
     "place-description": PlaceDescription,
     "comments-container": CommentsContainer
   },
-  methods: {
-    
-  },
+  methods: {},
   mounted() {
     eventBus.$on("add-comment", comment => {
-      this.place.comments.push(comment);
+      this.place.comments.push(comment.comments);
     });
   }
 };

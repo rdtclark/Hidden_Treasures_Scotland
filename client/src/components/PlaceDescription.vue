@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import ApiServices from "../services/apiServices.js";
 
 export default {
   data() {

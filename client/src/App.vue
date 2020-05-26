@@ -39,6 +39,8 @@ export default {
       this.places.push(place);
       this.getData();
     });
+
+
   },
   methods: {
     getData() {
