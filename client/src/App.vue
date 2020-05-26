@@ -96,6 +96,7 @@ body{
 .page{
   width: 90%;
   margin: auto;
+  margin-bottom: 20vh;
 }
 
 .title{
@@ -111,6 +112,7 @@ body{
 
 .place-map-container{
   display: flex;
+  margin-bottom: 10vh;
 }
 
 .add-place-btn{

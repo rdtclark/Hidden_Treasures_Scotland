@@ -1,7 +1,7 @@
 <template>
   <div>
     <img
-      src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Terrier_mixed-breed_dog.jpg"
+      :src="this.place.url"
       alt="Invalid Url"
       crossorigin="anonymous"
       class="image"
@@ -11,7 +11,8 @@
 
 <script>
 export default {
-  name: "place-container"
+  name: "place-container",
+  props: ['place']
 };
 </script>
 

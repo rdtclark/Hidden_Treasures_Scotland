@@ -1,10 +1,12 @@
 <template>
-  <div class="place-container">
-    <place-image :place="this.place"></place-image>
-    <place-description :place="this.place"></place-description>
-
+  <div>
+    <div class="place-container">
+      <place-image :place="this.place"></place-image>
+      <place-description :place="this.place"></place-description>
+    </div>
     <comments-container :place="this.place"></comments-container>
   </div>
+
 </template>
 
 <script>
@@ -34,9 +36,9 @@ export default {
 
 <style>
 .place-container {
-  margin-left: 5px;
-  margin-right: 5px;
-  flex: 0 1 100%;
-  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  justify-items: center;
+  width: 100%;
 }
 </style>
