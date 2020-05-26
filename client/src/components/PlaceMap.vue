@@ -1,17 +1,15 @@
 <template>
   <div class="row map">
-    <l-map @update:zoom="zoomUpdate"  :zoom="zoom" :center="center">
+    <l-map @update:zoom="zoomUpdate" :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
       <l-marker
         v-for="(place, index) in this.places"
         :key="index"
         :latLng="latLng(place.lat, place.long)"
         @click="handleClick(place)"
-        @add="openPopup">
-        <l-popup
-          :content="place.name" :options="{autoClose: true, closeOnClick: false}"
+        @add="openPopup"
       >
-      </l-popup>
+        <l-popup :content="place.name" :options="{autoClose: true, closeOnClick: false}"></l-popup>
         <!-- <l-icon icon-anchor="[16, 37]" class-name="marker"></l-icon> -->
       </l-marker>
     </l-map>
@@ -21,7 +19,7 @@
 <script>
 import L from "leaflet";
 import { LMap, LTileLayer, LMarker, LIcon, LPopup } from "vue2-leaflet";
-import { eventBus } from '../main.js'
+import { eventBus } from "../main.js";
 
 export default {
   data() {
@@ -31,7 +29,7 @@ export default {
       url:
         "https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=3576413ab5c044b1be3431efff7b1149",
       attribution:
-        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
       // iconSize: [40, 40]
     };
   },
@@ -44,7 +42,6 @@ export default {
     LPopup
   },
 
-
   methods: {
     latLng: function(lat, lng) {
       return L.latLng(lat, lng);
@@ -54,28 +51,25 @@ export default {
       this.currentZoom = zoom;
     },
 
-    handleClick(place){
-      eventBus.$emit('place-selected', place)
+    handleClick(place) {
+      eventBus.$emit("place-selected", place);
     },
-    openPopup: function (event) {
+    openPopup: function(event) {
       Vue.nextTick(() => {
-          event.target.openPopup();
-      })
-		},
-
-
-
-
-
+        event.target.openPopup();
+      });
+    }
   } //end of methods
 };
 </script>
 
 <style>
 .map {
-  height: 80vh;
-  width: 80%;
-  margin: auto;
+  height: 60vh;
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 0 1 100%;
+  grid-column: 1 / -1;
 }
 
 /* .leaflet-popup-content-wrapper {
@@ -89,6 +83,4 @@ export default {
 .leaflet-popup-tip-container {
 
 } */
-
-
 </style>

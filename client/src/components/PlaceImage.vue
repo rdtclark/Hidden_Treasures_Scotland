@@ -1,7 +1,12 @@
 <template>
-
-  <h2>Image Goes Here</h2>
-
+  <div>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Terrier_mixed-breed_dog.jpg"
+      alt="Invalid Url"
+      crossorigin="anonymous"
+      class="image"
+    />
+  </div>
 </template>
 
 <script>
@@ -11,4 +16,7 @@ export default {
 </script>
 
 <style>
+.image {
+  width: 15vw;
+}
 </style>

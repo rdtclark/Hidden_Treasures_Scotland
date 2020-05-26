@@ -26,7 +26,7 @@ export default {
   methods: {},
   mounted() {
     eventBus.$on("add-comment", comment => {
-        // this.place.comments.push(comment.value.comments);
+      // this.place.comments.push(comment.value.comments);
     });
   }
 };
@@ -34,6 +34,9 @@ export default {
 
 <style>
 .place-container {
-  height: 50vh;
+  margin-left: 5px;
+  margin-right: 5px;
+  flex: 0 1 100%;
+  grid-column: 1 / -1;
 }
 </style>
