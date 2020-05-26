@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Comments</h2>
-    <place-comment v-for="(comment, index) in this.place.comments" :key="index">{{comment}}</place-comment>
+    <place-comment v-for="(comment, index) in this.place.comments" :key="index" :comment="comment"></place-comment>
   </div>
 </template>
 
