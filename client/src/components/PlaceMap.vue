@@ -32,8 +32,7 @@ export default {
         "https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=3576413ab5c044b1be3431efff7b1149",
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      marker: L.latLng(47.41322, -1.219482),
-      iconSize: [40, 40]
+      // iconSize: [40, 40]
     };
   },
   props: ["places"],

@@ -1,4 +1,6 @@
-<template>{{this.comment}}</template>
+<template>
+  <div>{{this.comment}}</div>
+</template>
 
 <script>
 export default {

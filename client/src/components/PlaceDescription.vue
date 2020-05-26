@@ -1,6 +1,6 @@
 <template lang="html">
     <div>
-        
+        {{place.description}}
     </div>
 </template>
 

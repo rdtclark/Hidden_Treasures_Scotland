@@ -2,7 +2,7 @@
   <div>
     <h1>TITLE</h1>
     <place-form :places="places" :types="types"></place-form>
-    <place-map :places="this.places"></place-map>
+    <place-map :places="places"></place-map>
     <place-container v-if="selectedPlace" :place="selectedPlace"></place-container>
   </div>
 </template>
@@ -30,11 +30,15 @@ export default {
     eventBus.$on("place-selected", place => {
       this.selectedPlace = place;
     });
+
+    eventBus.$on("add-place", place => {
+      this.places.push(place);
+      this.getData();
+    });
   },
   methods: {
     getData() {
       ApiServices.getTreasures().then(res => {
-        console.log(res);
         this.places = res;
       });
     }
