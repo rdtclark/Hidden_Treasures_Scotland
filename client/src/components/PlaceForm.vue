@@ -79,6 +79,7 @@ input, select, textarea{
   background-color: #141C3D   ;
   color: #DAFEFF ;
   border: none;
+  width: 100%;
 }
 
 .submit-button{
@@ -104,7 +105,6 @@ input, select, textarea{
   grid-template-columns: auto auto;
   row-gap: 3vh;
   align-content: center;
-  justify-items: space-evenly;
   width: 90%;
 }
 
