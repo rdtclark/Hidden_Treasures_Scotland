@@ -81,6 +81,10 @@ input, select, textarea{
   width: 100%;
 }
 
+label{
+  font-size: 1em;
+}
+
 .submit-button{
   height: 5vh;
   width: 5vh;
@@ -90,8 +94,8 @@ input, select, textarea{
 .form-wrapper {
   display: grid;
   grid-template-columns: auto;
-  height: 60vh;
-  width: 20vw;
+  min-height: 60vh;
+  min-width: 20vw;
   justify-items: center;
   align-items: center;
   background-color: #254261 ;
