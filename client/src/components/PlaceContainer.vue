@@ -40,5 +40,6 @@ export default {
   grid-template-columns: 40% 60%;
   justify-items: center;
   width: 100%;
+  height: 50vh;
 }
 </style>

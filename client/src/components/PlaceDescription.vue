@@ -17,4 +17,10 @@ export default {
 
 
 <style>
+
+.description{
+  width: 100%;
+  text-align: left;
+}
+
 </style>
