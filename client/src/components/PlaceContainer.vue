@@ -1,10 +1,11 @@
 <template>
-  <div>
+  <div class="wrapper">
     <div class="place-container">
       <place-image :place="this.place"></place-image>
       <place-description :place="this.place"></place-description>
     </div>
     <comments-container :place="this.place"></comments-container>
+  </div>
   </div>
 
 </template>
@@ -34,12 +35,15 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .place-container {
   display: grid;
   grid-template-columns: 40% 60%;
   justify-items: center;
   width: 100%;
-  height: 50vh;
+}
+
+.wrapper {
+  height: auto;
 }
 </style>

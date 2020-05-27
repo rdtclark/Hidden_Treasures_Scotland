@@ -1,6 +1,8 @@
 <template>
   <div class="page">
     <div class="title">
+      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      ref="stylesheet">
 
       <div>
         <h1>LOGO</h1>
@@ -8,7 +10,7 @@
 
       <div>
         <p>
-          Welcome to Scotlands Hidden Treasures 
+          Welcome to Scotland's Hidden Treasures 
         <br>
           Are you ready to explore?
         </p>
@@ -108,6 +110,7 @@ body{
   height: 10vh;
   margin-bottom: 3em;
   border-radius: 0.5em;
+  font-family:Roboto, Arial, sans-serif;
 }
 
 .place-map-container{
@@ -119,13 +122,14 @@ body{
   height: 5vh;
 }
 
-
-
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
 }
 .fade-enter, .fade-leave-to {
   opacity: 0;
+}
+.footer{
+  font-family: Roboto, Arial, sans-serif;
 }
 
 
