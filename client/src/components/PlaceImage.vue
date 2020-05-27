@@ -18,6 +18,6 @@ export default {
 
 <style>
 .image {
-  width: 15vw;
+  width: 30vw;
 }
 </style>

@@ -9,7 +9,8 @@ db.treasures.insertMany(
         long: "-3.211475",
         description: "",
         comments: [],
-        type: "Place of Worship"
+        type: "Place of Worship",
+        url: "https://upload.wikimedia.org/wikipedia/commons/7/71/Edinburgh%2C-Water-Of-Leith%2C-St-Bernard%27s-Well-%28Q17570795%29.jpg"
       },
       {
         name: "Capelaw Hill",
@@ -17,7 +18,9 @@ db.treasures.insertMany(
         long: "-3.254886",
         description: "A hill summit in the Pentland Range that borders the South West of Edinburgh. At the top you get a fantastic view of the rest of the range with a drammatic ridge leading your eyes away from the capital towards the hills",
         comments: [],
-        type: "Hill"
+        type: "Hill",
+        url: "https://upload.wikimedia.org/wikipedia/commons/4/4a/On_Capelaw_Hill._-_geograph.org.uk_-_9222.jpg"
+
       },
       {
         name: "Cuaig Beach",

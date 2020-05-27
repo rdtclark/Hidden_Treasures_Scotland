@@ -75,7 +75,7 @@ export default {
   computed: {
     types: function() {
       const array = this.places.map(place => place.type);
-      let unique = array.filter((item, i, ar) => ar.indexOf(item) === i);
+      let unique = array.filter((item, index, arr) => arr.indexOf(item) === index);
       return unique;
     }
   },
