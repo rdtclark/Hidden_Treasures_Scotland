@@ -9,20 +9,12 @@
       </div>
 
       <div>
-<<<<<<< HEAD
             <p>
             Welcome to Scotlands Hidden Treasures 
             </p>
             <p>
             Are you ready to explore?
             </p>
-=======
-        <p>
-          Welcome to Scotland's Hidden Treasures 
-        <br>
-          Are you ready to explore?
-        </p>
->>>>>>> aeea0c806e28a344deb1bc123da236b16f1d6095
       </div>
 
       <div>
@@ -102,6 +94,11 @@ export default {
 
 body{
   background-color: #F2FFFD ;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+h1 {
+  font-family: Roboto, Arial, sans-serif;
 }
 
 .page{
@@ -138,7 +135,7 @@ body{
   opacity: 0;
 }
 .footer{
-  font-family: Roboto, Arial, sans-serif;
+
 }
 
 

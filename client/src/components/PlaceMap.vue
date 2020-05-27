@@ -1,5 +1,6 @@
 <template>
   <div class="row map">
+    
     <l-map @update:zoom="zoomUpdate" :zoom="zoom" :center="center" v-on:click="mapClick" class="point">
       <l-tile-layer :url="url" :attribution="attribution" ></l-tile-layer> 
       <l-marker
@@ -11,19 +12,23 @@
       >
         <l-popup :content="place.name" :options="{autoClose: true, closeOnClick: false}"></l-popup>
         <l-icon
-        :icon-url="icon">
+        :icon-url="`${publicPath}/assets/${place.type.toLowerCase().replace(/\s/g, '')}.png`"
+        class="marker-icon">
           
         </l-icon>
       </l-marker>
 
     </l-map>
+    
   </div>
 </template>
 <script>
 import L from "leaflet";
 import { LMap, LTileLayer, LMarker, LIcon, LPopup } from "vue2-leaflet";
 import { eventBus } from "../main.js";
-import cave from '../assets/cave.png'
+// import cave from '../assets/cave.png'
+
+
 
 export default {
   data() {
@@ -36,8 +41,7 @@ export default {
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       // iconSize: [40, 40]
-      newLat: null,
-      icon: cave
+      publicPath: process.env.BASE_URL
     };
   },
   props: ["places"],
@@ -51,6 +55,8 @@ export default {
   },
 
   mounted() {
+
+
 
       eventBus.$on('add-place', place => {
       const latlong = L.latLng(place.lat, place.long)
@@ -76,12 +82,9 @@ export default {
       eventBus.$emit('location-selected', e.latlng)
     },
 
-<<<<<<< HEAD
-=======
  
 
 
->>>>>>> aeea0c806e28a344deb1bc123da236b16f1d6095
     openPopup: function(e) {
       Vue.nextTick(() => {
         e.target.openPopup();
@@ -101,6 +104,10 @@ export default {
 
 .point:hover {
  cursor: crosshair;
+}
+
+.marker-icon:hover{
+  border: 1px solid gold;
 }
 
 /* .leaflet-popup-content-wrapper {
