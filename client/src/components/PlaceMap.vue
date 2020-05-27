@@ -12,7 +12,7 @@
       >
         <l-popup :content="place.name" :options="{autoClose: true, closeOnClick: false}"></l-popup>
         <l-icon
-        :icon-url="`${publicPath}assets/icons/${place.type.toLowerCase().replace(/\s/g, '')}.png`"
+        :icon-url="`${publicPath}${place.type.toLowerCase().replace(/\s/g, '')}.png`"
         class="marker-icon">
           
         </l-icon>
