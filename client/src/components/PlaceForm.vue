@@ -79,7 +79,10 @@ input, select, textarea{
   background-color: #141C3D   ;
   color: #DAFEFF ;
   border: none;
+  
 }
+
+
 
 .submit-button{
   height: 5vh;
