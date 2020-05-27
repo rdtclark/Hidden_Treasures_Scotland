@@ -93,6 +93,11 @@ export default {
 
 body{
   background-color: #F2FFFD ;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+h1 {
+  font-family: Roboto, Arial, sans-serif;
 }
 
 .page{
@@ -129,7 +134,7 @@ body{
   opacity: 0;
 }
 .footer{
-  font-family: Roboto, Arial, sans-serif;
+
 }
 
 
