@@ -64,7 +64,6 @@ export default {
       eventBus.$emit('location-selected', e.latlng)
     },
 
-
     openPopup: function(e) {
       Vue.nextTick(() => {
         e.target.openPopup();

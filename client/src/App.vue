@@ -7,11 +7,12 @@
       </div>
 
       <div>
-        <p>
-          Welcome to Scotlands Hidden Treasures 
-        <br>
-          Are you ready to explore?
-        </p>
+            <p>
+            Welcome to Scotlands Hidden Treasures 
+            </p>
+            <p>
+            Are you ready to explore?
+            </p>
       </div>
 
       <div>

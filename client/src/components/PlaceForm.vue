@@ -48,7 +48,6 @@ export default {
       this.lat = latlng.lat
       this.long = latlng.lng
     })
-
   },
 
   methods: {
@@ -81,8 +80,6 @@ input, select, textarea{
   border: none;
   width: 100%;
 }
-
-
 
 .submit-button{
   height: 5vh;
