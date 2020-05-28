@@ -1,10 +1,13 @@
 <template>
-  <div class="place-container">
-    <place-image :place="this.place"></place-image>
-    <place-description :place="this.place"></place-description>
-
+  <div class="wrapper">
+    <h2>{{this.place.name}}</h2>
+    <div class="place-container">
+      <place-image :place="this.place"></place-image>
+      <place-description :place="this.place"></place-description>
+    </div>
     <comments-container :place="this.place"></comments-container>
   </div>
+
 </template>
 
 <script>
@@ -26,14 +29,33 @@ export default {
   methods: {},
   mounted() {
     eventBus.$on("add-comment", comment => {
-        // this.place.comments.push(comment.value.comments);
+      // this.place.comments.push(comment.value.comments);
     });
   }
 };
 </script>
 
-<style>
+<style scoped>
 .place-container {
-  height: 50vh;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  height: auto;
+  min-height: 30vh;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  background-color: #254261;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-radius: 10px;
+  margin-bottom: 10vh;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: auto;
+}
+
+h2{
+  font-size: 3rem;
 }
 </style>

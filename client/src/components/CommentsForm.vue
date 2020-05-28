@@ -41,5 +41,19 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
+ .formwrapper{ 
+  display: grid;
+  grid-template-columns: auto;
+  align-items: center;
+  row-gap: 3vh;
+  justify-content: center;
+  }
+
+  textarea {
+    width: 100%;
+    max-height: 50%;
+  }
+
 </style>
