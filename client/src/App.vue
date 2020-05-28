@@ -1,11 +1,9 @@
 <template>
   <div class="page">
     <div class="title">
-      <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
-      ref="stylesheet">
 
-      <div class="logo">
-        <img src="../public/logo.png" alt="">
+      <div class="logo" >
+        <img src="../public/logo.png">
       </div>
 
       <div>
@@ -33,7 +31,12 @@
       <place-map :places="places"></place-map>
     </div>
     <place-container v-if="selectedPlace" :place="selectedPlace"></place-container>
-    <footer class="footer">FOOTER</footer>
+    <footer class="footer">
+      <p>Your eyes are weary from staring at the LCD. You feel sleepy. 
+        Notice how restful it is to watch the cursor blink. Close your eyes. 
+        The places stated above are wholly for informational purposes. 
+        You cannot imagine why you ever felt otherwise.</p>
+    </footer>
   </div>
 </template>
 
@@ -52,7 +55,8 @@ export default {
     return {
       places: [],
       selectedPlace: null,
-      showForm: false
+      showForm: false,
+      publicPath: process.env.BASE_URL
     };
   },
   mounted() {
@@ -103,7 +107,6 @@ body{
 .page{
   width: 90%;
   margin: auto;
-  margin-bottom: 20vh;
 }
 
 .title{
@@ -113,7 +116,7 @@ body{
   align-items: center;
   text-align: center;
   height: auto;
-  margin-bottom: 3em;
+  margin-bottom: 1em;
   border-radius: 0.5em;
   font-size: 1.5em;
 }
@@ -147,7 +150,10 @@ body{
   opacity: 0;
 }
 .footer{
-
+  height: 15vh;
+  background-color: #254261;
+  color: #DAFEFF ;
+  text-align: ;
 }
 
 

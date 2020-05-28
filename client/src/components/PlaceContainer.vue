@@ -48,7 +48,7 @@ export default {
   padding-top: 2em;
   padding-bottom: 2em;
   border-radius: 10px;
-  margin-bottom: 10vh;
+  margin-bottom: 5px;
 }
 .wrapper {
   display: grid;
@@ -57,5 +57,7 @@ export default {
 
 h2{
   font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
 </style>
