@@ -1,8 +1,11 @@
 <template lang="html">
-    <div class="description">
-        <h2>{{place.name}}</h2>
-        {{place.description}}
-        {{place.type}}
+     <div class="description-container">
+            <div>
+              <b>Description:</b>
+            </div>
+          <div class="description">
+            {{place.description}}
+          </div>
     </div>
 </template>
 
@@ -17,10 +20,27 @@ export default {
 
 
 <style>
-
+.description-container{
+  display: grid;
+  width: 80%;
+  height: auto;
+  min-height: 80%;
+  align-items: center;
+  justify-items: center;
+  background-color: #141C3D ;
+  color: #DAFEFF;
+  border-radius: 10px;
+  font-size: 1.2em;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
 .description{
-  width: 100%;
-  text-align: left;
+  display: flex;
+  align-items: center;
+
+  width: 60%;
+  margin: auto;
+  min-height: 90%;
 }
 
 </style>

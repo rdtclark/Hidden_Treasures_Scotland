@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div class="comments-background">
     <h2>Comments</h2>
     <div class="comments-container">
       <div class="comments">
@@ -29,17 +29,27 @@ export default {
 
 <style scoped>
 
+.comments-background{
+  text-align: center;
+  background-color: #254261;
+  color: #DAFEFF ;
+  border-radius: 10px;
+  padding-bottom: 4vh;
+  min-height: 40vh;
+}
 .comments-container{
-
   display: grid;
   grid-template-columns: 60% 40%;
 }
-
 .comments{
+  text-align: left;
   display: grid;
   grid-template-columns: auto;
+  overflow: scroll;
+  height: 21vh;
+  width: 95%;
+  margin: auto;
 }
-
 .comments-form{
   width: 100%;
 }

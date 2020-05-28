@@ -4,8 +4,8 @@
       <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
       ref="stylesheet">
 
-      <div>
-        <h1>LOGO</h1>
+      <div class="logo">
+        <img src="../public/logo.png" alt="">
       </div>
 
       <div>
@@ -92,13 +92,12 @@ export default {
 
 <style>
 
-body{
-  background-color: #F2FFFD ;
-  font-family: Roboto, Arial, sans-serif;
+*{
+  font-family: 'Marcellus SC', serif;
 }
 
-h1 {
-  font-family: Roboto, Arial, sans-serif;
+body{
+  background-color: #F2FFFD ;
 }
 
 .page{
@@ -113,10 +112,15 @@ h1 {
   justify-items: center;
   align-items: center;
   text-align: center;
-  height: 10vh;
+  height: auto;
   margin-bottom: 3em;
   border-radius: 0.5em;
-  font-family:Roboto, Arial, sans-serif;
+  font-size: 1.5em;
+}
+
+.logo img{
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .place-map-container{
@@ -125,7 +129,15 @@ h1 {
 }
 
 .add-place-btn{
-  height: 5vh;
+  height: 15vh;
+  width: 15vw;
+  font-size: 1em;
+  background: none;
+  border: none;
+}
+.add-place-btn:hover{
+  border: 0.3vh solid #ebda2eff;
+  border-radius: 1em;
 }
 
 .fade-enter-active, .fade-leave-active {

@@ -9,13 +9,14 @@
         :latLng="latLng(place.lat, place.long)"
         @click="handleClick(place)"
         @add="openPopup"
+        class="marker"
       >
         <l-popup :content="place.name" :options="{autoClose: true, closeOnClick: false}"></l-popup>
         <l-icon
         :icon-url="`${publicPath}${place.type.toLowerCase().replace(/\s/g, '')}.png`"
         class="marker-icon">
-          
         </l-icon>
+        {{getIconUrl(place)}}
       </l-marker>
 
     </l-map>
@@ -56,13 +57,14 @@ export default {
 
   mounted() {
 
-
-
       eventBus.$on('add-place', place => {
       const latlong = L.latLng(place.lat, place.long)
       this.center = latlong
     })
 
+  },
+  computed: {
+    
   },
 
   methods: {
@@ -81,6 +83,12 @@ export default {
     mapClick: function(e) {
       eventBus.$emit('location-selected', e.latlng)
     },
+
+ 
+   getIconUrl(place){
+        console.log(`${place.type.toLowerCase().replace(/\s/g, '')}.png`);
+    },
+
 
     openPopup: function(e) {
       Vue.nextTick(() => {
@@ -103,8 +111,8 @@ export default {
  cursor: crosshair;
 }
 
-.marker-icon:hover{
-  border: 1px solid gold;
+.marker{
+  box-shadow: #888888;;
 }
 
 /* .leaflet-popup-content-wrapper {
