@@ -23,13 +23,10 @@ services:
     restart: always
     volumes:
       - db-data:/data/db
-      - ./backend/db/seed.js:/docker-entrypoint-initdb.d/seed.js:ro
     ports:
       - 27017:27017
     networks:
       - backend
-    environment:
-      - MONGO_INITDB_DATABASE=hidden_treasures
 
   db_seed:
     container_name: db_seed
