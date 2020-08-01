@@ -1,6 +1,3 @@
-use hidden_treasures;
-db.dropDatabase();
-
 db.treasures.insertMany(
   [
     

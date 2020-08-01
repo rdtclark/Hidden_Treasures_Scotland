@@ -1,0 +1,63 @@
+version: "3.7"
+services:
+  backend:
+    container_name: backend 
+    build:
+      context: backend
+    depends_on:
+      - db  
+    volumes:
+      - ./backend:/usr/app
+      - /usr/app/node_modules
+    environment:  
+      - MONGO_URL=mongodb://db:27017
+      - APP_PORT=8080
+    ports: ['8080:8080']
+    networks:
+      - backend
+      - frontend
+
+  db:
+    container_name: db
+    image: mongo:4.2
+    restart: always
+    volumes:
+      - db-data:/data/db
+      - ./backend/db/seed.js:/docker-entrypoint-initdb.d/seed.js:ro
+    ports:
+      - 27017:27017
+    networks:
+      - backend
+    environment:
+      - MONGO_INITDB_DATABASE=hidden_treasures
+
+  db_seed:
+    container_name: db_seed
+    build: ./mongo
+    networks:
+      - backend
+    depends_on:
+      - db
+
+  frontend:
+    container_name: client
+    build:
+      context: client
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    ports:
+      - '80:80'
+    environment:  
+      - BACKEND_URL=http://127.0.0.1/api/treasures
+    networks:
+      - frontend
+
+volumes:
+  db-data:
+
+networks:
+  backend:
+    name: backend
+    driver: bridge
+  frontend:

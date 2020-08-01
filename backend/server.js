@@ -4,12 +4,13 @@ const parser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const createRouter = require('./helpers/create_router.js')
 const cors = require('cors');
+const config = require('./config/Config');
 
 
 app.use(cors())
 app.use(parser.json());
 
-MongoClient.connect('mongodb://localhost:27017')
+MongoClient.connect(config.DB)
   .then((client) => {
     const db = client.db('hidden_treasures')
     const treasureCollection = db.collection('treasures')
@@ -18,6 +19,6 @@ MongoClient.connect('mongodb://localhost:27017')
   })
   .catch(console.error)
 
-app.listen(3000, function () {
+app.listen(config.APP_PORT, function () {
   console.log(`Listening on port ${ this.address().port }`);
 });

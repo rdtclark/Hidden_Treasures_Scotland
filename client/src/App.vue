@@ -32,10 +32,6 @@
     </div>
     <place-container v-if="selectedPlace" :place="selectedPlace"></place-container>
     <footer class="footer">
-      <p>Your eyes are weary from staring at the LCD. You feel sleepy. 
-        Notice how restful it is to watch the cursor blink. Close your eyes. 
-        The places stated above are wholly for informational purposes. 
-        You cannot imagine why you ever felt otherwise.</p>
     </footer>
   </div>
 </template>
