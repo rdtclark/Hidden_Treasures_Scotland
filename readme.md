@@ -50,7 +50,7 @@ network as the `db` container.
 As you can see, this temporary container runs a simple command, mongoimport that takes
 a JSON array of seeds contained in the `seed.json`.
 
-This result should have been achievable through the creating the database during
+This result should have been achievable during
 building the `db` container, then passing an initialisation script to mongodb
 however it did not seem to have the intended affect. Failing to create users or
 seed the data.
