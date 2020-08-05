@@ -3,7 +3,7 @@
 # Hidden Treasures of Scotland
 > The app to discover mini adventures near you. Are you ready to explore?
 
-Puruse our growing search our growing list of unusual places to visit in and around Scotland. Hidden beaches, caves, walks and generally fun places for a mini adventure in your back yard.
+Puruse our growing our growing secret book  of unusual places to visit in and around Scotland. Hidden beaches, caves, walks and generally fun places for a mini adventure in your back yard.
 
 This was a group project carried out during my time completing the CodeClan Professional Software Development Course.
 
@@ -20,7 +20,7 @@ Hosting Configuration:
 - Node.js and Express Backend API
 - Vue front end
 - Mongodb
-- Leaflet library for Vue.js
+- Leaflet Mapping library for Vue.js
 
 ## MVP
 
